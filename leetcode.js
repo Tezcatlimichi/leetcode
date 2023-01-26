@@ -29,7 +29,7 @@ let romanToInt = function (s) {
 let s = 'III'
 // s can also equal "LVIII" and "MCMXCIV"
 
-// #2 Two Sum
+// #2 Two Sum                                                       // # Two Sum
 
 let nums = [3, 2, 4]
 let target = 6
@@ -45,3 +45,20 @@ const twoSum = (nums, target) => {
 }
 // time complexity : 0(N^2)
 //space complexity : 0(1) - constant
+
+//Two sum solved with Hashmap
+
+const twoSumHash = (nums, target) => {
+  let map = {}
+  for (let i = 0; i < nums.length; i++) {
+    let value = nums[i]
+    let complementPair = target - value
+    if (map[complementPair] !== undefined) {
+      return [map[complementPair], i]
+    } else {
+      map[value] = i
+    }
+  }
+}
+// time complexity : 0(N)
+// space complexity : 0(N)
