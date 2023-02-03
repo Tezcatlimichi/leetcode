@@ -1,4 +1,4 @@
-// roman to integer
+// roman to integer                                             // roman to integer
 let romanToInt = function (s) {
   let conversion = {
     I: 1,
@@ -28,6 +28,7 @@ let romanToInt = function (s) {
 }
 let s = 'III'
 // s can also equal "LVIII" and "MCMXCIV"
+//                                                                                                         Arrays & Hashing
 
 // #2 Two Sum                                                       // # Two Sum
 
@@ -62,3 +63,17 @@ const twoSumHash = (nums, target) => {
 }
 // time complexity : 0(N)
 // space complexity : 0(N)
+
+//                                                                                                    Contains Duplicate
+//Given an integer array nums, return true if any value appears at least twice in the rray , and return false if every element is distinct
+
+const containsDuplicate = (nums) => {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] === nums[j]) return true
+    }
+  }
+  return false
+}
+
+//brute force => T(n^2)
