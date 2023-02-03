@@ -67,13 +67,35 @@ const twoSumHash = (nums, target) => {
 //                                                                                                    Contains Duplicate
 //Given an integer array nums, return true if any value appears at least twice in the rray , and return false if every element is distinct
 
-const containsDuplicate = (nums) => {
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[i] === nums[j]) return true
+const containsDuplicate = (numss) => {
+  for (let i = 0; i < numss.length; i++) {
+    for (let j = i + 1; j < numss.length; j++) {
+      if (numss[i] === numss[j]) return true
     }
   }
   return false
 }
-
+let numss = [1, 2, 3, 4]
 //brute force => T(n^2)
+
+const containsDuplicateHash = (numss) => {
+  let hTable = {}
+  for (let i = 0; i < numss.length; i++) {
+    if (nums[i] in hTable) return true
+    hTable[nums[i]] = 1
+  }
+  return false
+}
+
+//space complexity 0N
+//time complexity linear
+
+// my preferred way
+const containsDuplicateHashMap = (nums) => {
+  let map = {}
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] in map) return true
+    map[nums[1]] = 0
+  }
+  return false
+}
